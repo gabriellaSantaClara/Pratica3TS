@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Laboratório 03 - Carrinho</title>
+</head>
+<body>
+  <h1>Carrinho de Compras</h1>
+
+  <form id="form-produto">
+    <label>Tipo:
+      <select id="tipo">
+        <option value="tv">TV</option>
+        <option value="celular">Celular</option>
+        <option value="bicicleta">Bicicleta</option>
+      </select>
+    </label><br>
+
+    <label>Modelo: <input type="text" id="modelo" required></label><br>
+    <label>Especificação: <input type="text" id="extra" required></label><br>
+    <label>Fabricante: <input type="text" id="fabricante" required></label><br>
+    <label>Valor: <input type="number" id="valor" required></label><br>
+    
+    <button type="submit">Adicionar</button>
+  </form>
+
+  <h2>Resumo do Carrinho</h2>
+  <ul id="lista-produtos"></ul>
+  <p><strong>Total:</strong> R$ <span id="total">0</span></p>
+
+  <script src="app.js"></script>
+</body>
+</html>
