@@ -40,28 +40,19 @@ form.addEventListener('submit', (e) => {
     case 'tv':
       const resolucao = (document.getElementById('resolucao') as HTMLInputElement).value.trim();
       const polegadas = parseInt((document.getElementById('polegadas') as HTMLInputElement).value.trim());
-      if (!resolucao || isNaN(polegadas)) {
-        alert('Preencha resolução e tamanho em polegadas da TV.');
-        return;
-      }
+     
       novoProduto = { modelo, fabricante, valor, resolucao, tamanhoPolegadas: polegadas };
       break;
 
     case 'celular':
       const memoria = (document.getElementById('memoria') as HTMLInputElement).value.trim();
-      if (!memoria) {
-        alert('Preencha a memória do celular.');
-        return;
-      }
+    
       novoProduto = { modelo, fabricante, valor, memoria };
       break;
 
     case 'bicicleta':
       const aro = (document.getElementById('aro') as HTMLInputElement).value.trim();
-      if (!aro) {
-        alert('Preencha o tamanho do aro da bicicleta.');
-        return;
-      }
+   
       novoProduto = { modelo, fabricante, valor, tamanhoAro: aro };
       break;
 
@@ -109,10 +100,12 @@ function atualizarCamposExtras() {
   const grupoCelular = document.getElementById('campos-celular')!;
   const grupoBicicleta = document.getElementById('campos-bicicleta')!;
 
+  //limpa os campos
   grupoTV.style.display = 'none';
   grupoCelular.style.display = 'none';
   grupoBicicleta.style.display = 'none';
 
+  //mostra os campos
   if (tipo === 'tv') grupoTV.style.display = 'block';
   else if (tipo === 'celular') grupoCelular.style.display = 'block';
   else if (tipo === 'bicicleta') grupoBicicleta.style.display = 'block';
