@@ -1,33 +1,54 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8" />
-  <title>Laboratório 03 - Carrinho</title>
-</head>
-<body>
-  <h1>Carrinho de Compras</h1>
+<form id="form-produto" style="display: flex; flex-direction: column; max-width: 400px; gap: 10px; margin-bottom: 20px;">
+  <label>Tipo de Produto:
+    <select id="tipo" style="width: 100%; padding: 4px;">
+      <option value="tv">TV</option>
+      <option value="celular">Celular</option>
+      <option value="bicicleta">Bicicleta</option>
+    </select>
+  </label>
 
-  <form id="form-produto">
-    <label>Tipo:
-      <select id="tipo">
-        <option value="tv">TV</option>
-        <option value="celular">Celular</option>
-        <option value="bicicleta">Bicicleta</option>
-      </select>
-    </label><br>
+  <label>Modelo:
+    <input id="modelo" placeholder="Modelo" style="width: 100%; padding: 4px;" />
+  </label>
 
-    <label>Modelo: <input type="text" id="modelo" required></label><br>
-    <label>Especificação: <input type="text" id="extra" required></label><br>
-    <label>Fabricante: <input type="text" id="fabricante" required></label><br>
-    <label>Valor: <input type="number" id="valor" required></label><br>
-    
-    <button type="submit">Adicionar</button>
-  </form>
+  <label>Fabricante:
+    <input id="fabricante" placeholder="Fabricante" style="width: 100%; padding: 4px;" />
+  </label>
 
-  <h2>Resumo do Carrinho</h2>
-  <ul id="lista-produtos"></ul>
-  <p><strong>Total:</strong> R$ <span id="total">0</span></p>
+  <label>Valor:
+    <input id="valor" placeholder="Valor" style="width: 100%; padding: 4px;" />
+  </label>
 
-  <script src="app.js"></script>
-</body>
-</html>
+  <!-- Campos específicos da TV -->
+  <div id="campos-tv" style="display: none; flex-direction: column; gap: 10px;">
+    <label>Resolução:
+      <input id="resolucao" placeholder="Resolução" style="width: 100%; padding: 4px;" />
+    </label>
+    <label>Polegadas:
+      <input id="polegadas" placeholder="Polegadas" style="width: 100%; padding: 4px;" />
+    </label>
+  </div>
+
+  <!-- Campos específicos do Celular -->
+  <div id="campos-celular" style="display: none; flex-direction: column; gap: 10px;">
+    <label>Memória:
+      <input id="memoria" placeholder="Memória" style="width: 100%; padding: 4px;" />
+    </label>
+  </div>
+
+  <!-- Campos específicos da Bicicleta -->
+  <div id="campos-bicicleta" style="display: none; flex-direction: column; gap: 10px;">
+    <label>Tamanho do Aro:
+      <input id="aro" placeholder="Tamanho do Aro" style="width: 100%; padding: 4px;" />
+    </label>
+  </div>
+
+  <button type="submit" style="padding: 6px; background-color: #4CAF50; color: white; border: none; cursor: pointer;">
+    Adicionar
+  </button>
+</form>
+
+<ul id="lista-produtos" style="list-style: none; padding: 0;"></ul>
+<p style="font-weight: bold;">Total: R$ <span id="total">0.00</span></p>
+
+<script src="app.js"></script>
